@@ -1,2 +1,0 @@
-# InsurenceMicroservice
-API Gateway Projects
