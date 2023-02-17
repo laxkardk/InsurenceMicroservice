@@ -7,7 +7,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "APIGateway", "APIGateway", 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MicroServices", "MicroServices", "{8C012C7F-09B2-4117-B842-3CA26C036A5F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Insurance.PurchaseAPI", "Insurance.PurchaseAPI\Insurance.PurchaseAPI.csproj", "{4A98A443-03F9-431C-AB74-9E36B095D4AA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Insurance.PurchaseAPI", "Insurance.PurchaseAPI\Insurance.PurchaseAPI.csproj", "{4A98A443-03F9-431C-AB74-9E36B095D4AA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
