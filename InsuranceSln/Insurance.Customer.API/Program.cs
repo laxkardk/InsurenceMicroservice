@@ -1,13 +1,17 @@
 using Insurance.CustomerAPI.Data;
 using Microsoft.EntityFrameworkCore;
 using MediatR;
+using Insurance.CustomerAPI.Filters;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
-builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+builder.Services.AddControllers(options =>
+{
+    options.Filters.Add<CustomExceptionFilter>();
+});
+
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<CustomerDbContext>(opts => opts.UseSqlServer(builder.Configuration.GetConnectionString("CustomerDB")));

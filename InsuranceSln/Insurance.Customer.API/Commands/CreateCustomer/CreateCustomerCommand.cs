@@ -5,7 +5,10 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Insurance.CustomerAPI.Commands.CreateCustomer
 {
-    public class CreateCustomerCommand : IRequest<Customer>
+    /// <summary>
+    /// Command to create new customer
+    /// </summary>
+    public class CreateCustomerCommand : IRequest<Response<Customer>>
     {
 
         /// <summary>
@@ -29,7 +32,7 @@ namespace Insurance.CustomerAPI.Commands.CreateCustomer
         public string Address { get; set; } = string.Empty;
 
         /// <summary>
-        /// Customer Customer
+        /// Customer Gender
         /// </summary>
         public string Gender { get; set; } = string.Empty;
 

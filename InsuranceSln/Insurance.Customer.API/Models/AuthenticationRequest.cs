@@ -1,8 +1,18 @@
 ﻿namespace Insurance.CustomerAPI.Models
 {
+    /// <summary>
+    /// Authentication Input request
+    /// </summary>
     public class AuthenticationRequest
     {
-        public string UserName { get; set; }
-        public string Password { get; set; }
+        /// <summary>
+        /// User Name
+        /// </summary>
+        public string UserName { get; set; } = string.Empty;
+
+        /// <summary>
+        /// Password
+        /// </summary>
+        public string Password { get; set; } = string.Empty;
     }
 }

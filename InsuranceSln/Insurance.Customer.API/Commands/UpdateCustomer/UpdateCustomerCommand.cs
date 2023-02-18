@@ -2,12 +2,16 @@
 using MediatR;
 namespace Insurance.CustomerAPI.Commands.CreateCustomer
 {
-    public class UpdateCustomerCommand : IRequest<Customer>
+    /// <summary>
+    /// Command to update customer
+    /// </summary>
+    public class UpdateCustomerCommand : IRequest<Response<Customer>>
     {
         /// <summary>
-        /// Id
+        /// Customer Id
         /// </summary>
         public int Id { get; set; }
+
         /// <summary>
         /// Customer Name
         /// </summary>

@@ -6,7 +6,7 @@ namespace Insurance.CustomerAPI.Queries.GetCustomerById
     /// <summary>
     /// Get Customer by Id Query
     /// </summary>
-    public class GetCustomerByIdQuery : IRequest<Customer>
+    public class GetCustomerByIdQuery : IRequest<Customer?>
     {
         /// <summary>
         /// Id
