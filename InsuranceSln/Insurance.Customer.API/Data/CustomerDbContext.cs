@@ -1,6 +1,5 @@
 ﻿using Insurance.CustomerAPI.Models;
 using Microsoft.EntityFrameworkCore;
-using System.Collections.Generic;
 
 namespace Insurance.CustomerAPI.Data
 {
@@ -11,5 +10,16 @@ namespace Insurance.CustomerAPI.Data
         {
         }
         public DbSet<Customer> Customers { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder builder)
+        {
+            builder.Entity<Customer>()
+                .HasIndex(u => u.Email)
+                .IsUnique();
+
+            builder.Entity<Customer>()
+                .HasIndex(u => u.Mobile)
+                .IsUnique();
+        }
     }
 }

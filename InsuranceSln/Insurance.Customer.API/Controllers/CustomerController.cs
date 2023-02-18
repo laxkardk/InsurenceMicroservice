@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Insurance.CustomerAPI.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api")]
     [ApiController]
     public class CustomerController : ControllerBase
     {
