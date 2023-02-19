@@ -7,8 +7,9 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddDbContext<PolicyMasterDBContext>(opts => opts.UseSqlServer(builder.Configuration.GetConnectionString("PolicyMasterDBConn")));
-builder.Services.AddMediatR(x => x.RegisterServicesFromAssembly(typeof(Program).Assembly));
+//Sql Connection
+builder.Services.AddDbContext<PolicyMasterDBContext>(dbConn => dbConn.UseSqlServer(builder.Configuration.GetConnectionString("PolicyMasterDBConn")));
+builder.Services.AddMediatR(mediatr => mediatr.RegisterServicesFromAssembly(typeof(Program).Assembly));
 
 var app = builder.Build();
 

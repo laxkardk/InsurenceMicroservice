@@ -1,18 +1,13 @@
-﻿using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
+﻿using MediatR;
+using PolicyMasterService.Models;
 
-namespace PolicyMasterService.Models
+namespace PolicyMasterService.Commands
 {
     /// <summary>
-    /// Policy Master Entity
+    /// Update policy command
     /// </summary>
-    public class PolicyMasterEntity
+    public class UpdatePolicyCmd : IRequest<MediatResponseEntity<PolicyMasterEntity>>
     {
-        /// <summary>
-        /// Identity Primary key field, Unique Policy Id
-        /// </summary>
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public decimal PolicyId { get; set; }
 
         public string PolicyName { get; set; } = string.Empty;

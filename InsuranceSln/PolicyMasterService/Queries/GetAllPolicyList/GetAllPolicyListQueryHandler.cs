@@ -10,10 +10,12 @@ namespace PolicyMasterService.Queries
 
         private readonly PolicyMasterDBContext _policyMasterContext;
 
-        public GetAllPolicyListQueryHandler(PolicyMasterDBContext context)
+        public GetAllPolicyListQueryHandler(PolicyMasterDBContext policyMasterContext)
         {
-            _policyMasterContext = context;
+            _policyMasterContext = policyMasterContext;
         }
+
+        #region Methods
 
         /// <summary>
         /// Return async list using MediatR
@@ -40,9 +42,12 @@ namespace PolicyMasterService.Queries
                     PolicyName = policy.PolicyName,
                     PolicyCategory = policy.PolicyCategory,
                     PolicyDescription = policy.PolicyDescription,
-                    Price = policy.Price,
+                    PolicyLaunchDate = policy.PolicyLaunchDate,
                     isActive = policy.isActive
                 });
         }
     }
+
+    #endregion Methods
+
 }
