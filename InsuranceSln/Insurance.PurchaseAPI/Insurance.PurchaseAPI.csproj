@@ -27,11 +27,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Insurance.Logic\Insurance.Logic.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
     <Folder Include="CQRS\Queries\Interfaces\" />
+    <Folder Include="Database\DBScript\" />
   </ItemGroup>
 
 </Project>

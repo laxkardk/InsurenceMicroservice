@@ -1,5 +1,3 @@
-using Insurance.PurchaseAPI.CQRS.Queries.Handlers;
-using Insurance.PurchaseAPI.CQRS.Queries.Interfaces;
 using Insurance.PurchaseAPI.Database;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
