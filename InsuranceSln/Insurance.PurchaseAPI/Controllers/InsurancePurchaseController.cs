@@ -26,6 +26,33 @@ namespace Insurance.PurchaseAPI.Controllers
             _mediator = mediator;
         }
         /// <summary>
+        /// Method for get all policy
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
+        [HttpGet(Name = "GetAllInsurancePolicy")]
+        public async Task<ResponseCommandModel> GetAllInsurancePolicy()
+        {
+            try
+            {
+                response.status = ResponseStatus.success.ToString();
+                response.code = StatusCodes.Status200OK;
+                response.message = _appConfig.status200OK;
+                response.data = await _mediator.Send(new GetAllInsurancePolicyCommand()); 
+                return response;
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("Exception Occured during Place Order Action Method. Here is the Exception message :" + ex.Message);
+                response.status = ResponseStatus.failure.ToString();
+                response.code = StatusCodes.Status500InternalServerError;
+                response.message = _appConfig.statusCode500;
+                response.data = null;
+                return response;
+            }
+
+        }
+        /// <summary>
         /// Method for purchasing policy
         /// </summary>
         /// <param name="model"></param>
