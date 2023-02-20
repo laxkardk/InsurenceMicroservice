@@ -1,18 +1,22 @@
-using Insurance.PurchaseAPI.CQRS.Queries.Handlers;
-using Insurance.PurchaseAPI.CQRS.Queries.Interfaces;
 using Insurance.PurchaseAPI.Database;
+using MediatR;
 using Microsoft.EntityFrameworkCore;
+using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-string connString = builder.Configuration.GetConnectionString("DefaultConnection");
+string? connString = builder.Configuration.GetConnectionString("DefaultConnection");
 builder.Services.AddDbContext<AppDbContext>(options =>
            {
-               options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
+               options.UseSqlServer(connString);
            });
 
-builder.Services.AddScoped<IInsurancePurchaseCommand, InsurancePurchaseCommandHandler>();
+
+builder.Services.AddMediatR(Assembly.GetExecutingAssembly());
+builder.Services.AddMediatR(typeof(Program).Assembly);
+
+
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -28,7 +32,7 @@ var app = builder.Build();
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
-    app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "WebAPICQRS v1"));
+    app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "CQRSandMediatR v1"));
 }
 
 app.UseHttpsRedirection();

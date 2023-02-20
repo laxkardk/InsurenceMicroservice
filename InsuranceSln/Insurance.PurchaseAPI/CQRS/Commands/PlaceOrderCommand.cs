@@ -1,8 +1,11 @@
-﻿namespace Insurance.PurchaseAPI.Models
+﻿using Insurance.PurchaseAPI.Models;
+using Insurance.PurchaseAPI.Database;
+using MediatR;
+
+namespace Insurance.PurchaseAPI.CQRS.Commands
 {
-    public class InsuranceProductCommandModel
+    public class PlaceOrderCommand : IRequest<ApiResponseEntity<PurchaseInsuranceEntity>>
     {
-        public int Id { get; set; }
         public int CustomerPolicyId { get; set; }
         public string? CustomerAddress { get; set; }
         public decimal Price { get; set; }
@@ -13,5 +16,6 @@
         public DateTime CreatedDate { get; set; }
         public string? ModifiedBy { get; set; }
         public DateTime ModifiedDate { get; set; }
+
     }
 }

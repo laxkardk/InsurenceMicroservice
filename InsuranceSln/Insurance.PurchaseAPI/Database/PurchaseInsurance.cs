@@ -1,7 +1,13 @@
-﻿namespace Insurance.PurchaseAPI.Database
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+
+namespace Insurance.PurchaseAPI.Database
 {
     public class PurchaseInsuranceEntity
     {
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
         public int CustomerPolicyId { get; set; }
         public string? CustomerAddress { get; set; }

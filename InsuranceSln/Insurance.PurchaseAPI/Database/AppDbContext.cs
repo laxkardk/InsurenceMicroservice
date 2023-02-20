@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Insurance.PurchaseAPI.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace Insurance.PurchaseAPI.Database
 {
