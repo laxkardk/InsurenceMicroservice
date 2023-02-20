@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
 
-namespace CustomerPolicyServices.Model
+namespace CustomerPolicyServices.Models
 {
     public class CustomerPolicy
     {
@@ -17,7 +17,7 @@ namespace CustomerPolicyServices.Model
         public bool IsActive { get; set; }
         public decimal Bonus { get; set; }
         public DateTime MaturityDate { get; set; }
-        public string Description { get; set; } = string.Empty;
+        public string PolicyDescription { get; set; } = string.Empty;
         public string PolicyType { get; set; } = string.Empty;
         public decimal PolicyAmount { get; set; }
         public decimal MaturityAmount { get; set; }

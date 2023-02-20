@@ -1,4 +1,4 @@
-﻿using CustomerPolicyServices.Model;
+﻿using CustomerPolicyServices.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace CustomerPolicyServices.Context
@@ -11,7 +11,7 @@ namespace CustomerPolicyServices.Context
 
         }
 
-        public DbSet<CustomerPolicy> CustomerPolicies { get; set; }
+        public DbSet<CustomerPolicy> CustomerPolicy { get; set; }
         public async Task<int> SaveChangesAsync()
         {
             return await base.SaveChangesAsync();
