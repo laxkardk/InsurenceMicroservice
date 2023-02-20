@@ -7,7 +7,28 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
+    <Compile Remove="CQRS\Command\**" />
+    <Compile Remove="Migrations\**" />
+    <Content Remove="CQRS\Command\**" />
+    <Content Remove="Migrations\**" />
+    <EmbeddedResource Remove="CQRS\Command\**" />
+    <EmbeddedResource Remove="Migrations\**" />
+    <None Remove="CQRS\Command\**" />
+    <None Remove="Migrations\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MediatR" Version="8.0.0" />
+    <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="8.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.3" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.3" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
+    <PackageReference Include="System.Configuration.ConfigurationManager" Version="7.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="CQRS\Queries\Interfaces\" />
+    <Folder Include="Database\DBScript\" />
   </ItemGroup>
 
 </Project>
