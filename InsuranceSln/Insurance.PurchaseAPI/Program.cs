@@ -1,3 +1,5 @@
+using Insurance.PurchaseAPI.CQRS.Queries.Handlers;
+using Insurance.PurchaseAPI.CQRS.Queries.Interfaces;
 using Insurance.PurchaseAPI.Database;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
@@ -18,12 +20,13 @@ builder.Services.AddMediatR(typeof(Program).Assembly);
 
 
 
+// Add services to the container.
+
+
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-
-
 
 
 var app = builder.Build();
@@ -39,7 +42,12 @@ app.UseHttpsRedirection();
 
 app.UseAuthorization();
 
+
 app.UseRouting();
+
+app.MapControllers();
+
+
 
 app.MapControllers();
 
