@@ -18,6 +18,7 @@ namespace Insurance.PurchaseAPI.Controllers
             _logger = logger;
         }
 
+        [NonAction]
         [HttpGet(Name = "GetWeatherForecast")]
         public IEnumerable<WeatherForecast> Get()
         {

@@ -1,0 +1,230 @@
+{
+	"info": {
+		"_postman_id": "8c54e0a5-224c-4c5d-b062-5ec654cc8a2e",
+		"name": "InsuranceMS",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Customer",
+			"item": [
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Rahul Tripathi\",\r\n    \"email\": \"tripathirahul19891@gmail.com\",\r\n    \"mobile\": \"9555146292\",\r\n    \"address\": \"Robertsganj U.P\",\r\n    \"gender\": \"Male\",\r\n    \"dob\": \"1990-08-01T07:20:57.108\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5183/api/customer/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5183",
+							"path": [
+								"api",
+								"customer",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\":8,\r\n    \"name\": \"Rahul Tripathi\",\r\n    \"email\": \"tripathirahul3@gmail.com\",\r\n    \"mobile\": \"9555146293\",\r\n    \"address\": \"U.P\",\r\n    \"gender\": \"Male\",\r\n    \"dob\": \"1990-08-01T07:20:57.108\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5183/api/customer/update",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5183",
+							"path": [
+								"api",
+								"customer",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\":4\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5183/api/customer/delete",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5183",
+							"path": [
+								"api",
+								"customer",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "list",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{  \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5183/api/customer/list",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5183",
+							"path": [
+								"api",
+								"customer",
+								"list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "detail",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":\"5\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5183/api/customer/detail",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5183",
+							"path": [
+								"api",
+								"customer",
+								"detail"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Authentication",
+			"item": [
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"userName\": \"tripathirahul1989@gmail.com\",\r\n  \"password\": \"admin123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5158/api/Account",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5158",
+							"path": [
+								"api",
+								"Account"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "InsurancePurchase",
+			"item": [
+				{
+					"name": "weatherforecost",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6InRyaXBhdGhpcmFodWwxOTg5QGdtYWlsLmNvbSIsIlJvbGUiOiJDdXN0b21lciIsIm5iZiI6MTY3NjcwODI2OSwiZXhwIjoxNjc2NzA5NDY5LCJpYXQiOjE2NzY3MDgyNjl9.mKUQ-AeTUZZXDH1gpseXMzO9CgEgp6gdM661rIIj31Q",
+								"type": "default",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5158/api/Values",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5158",
+							"path": [
+								"api",
+								"Values"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
