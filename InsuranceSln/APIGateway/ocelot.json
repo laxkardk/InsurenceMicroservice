@@ -13,16 +13,111 @@
       "DownstreamPathTemplate": "/api/Account"
     },
     {
-      "UpstreamPathTemplate": "/api/Values",
-      "UpstreamHttpMethod": [ "Get", "Post", "Put" ],
+      "UpstreamPathTemplate": "/api/customer/list",
+      "UpstreamHttpMethod": [ "GET" ],
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
           "Host": "localhost",
-          "Port": 5263
+          "Port": 5183
         }
       ],
-      "DownstreamPathTemplate": "/api/Values",
+      "DownstreamPathTemplate": "/api/customer/list",
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "RouteClaimsRequirement": {
+        "Role": "Customer"
+      }
+    },
+    {
+      "UpstreamPathTemplate": "/api/AddPolicy",
+      "UpstreamHttpMethod": [ "POST" ],
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5436
+        }
+      ],
+      "DownstreamPathTemplate": "/api/AddPolicy",
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "RouteClaimsRequirement": {
+        "Role": "Customer"
+      }
+    },
+    {
+      "UpstreamPathTemplate": "/api/UpdatePolicy",
+      "UpstreamHttpMethod": [ "POST" ],
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5436
+        }
+      ],
+      "DownstreamPathTemplate": "/api/UpdatePolicy",
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "RouteClaimsRequirement": {
+        "Role": "Customer"
+      }
+    },
+    {
+      "UpstreamPathTemplate": "/api/DeletePolicy",
+      "UpstreamHttpMethod": [ "POST" ],
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5436
+        }
+      ],
+      "DownstreamPathTemplate": "/api/DeletePolicy",
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "RouteClaimsRequirement": {
+        "Role": "Customer"
+      }
+    },
+    {
+      "UpstreamPathTemplate": "/api/GetPolicyDetails",
+      "UpstreamHttpMethod": [ "POST" ],
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5436
+        }
+      ],
+      "DownstreamPathTemplate": "/api/GetPolicyDetails",
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "RouteClaimsRequirement": {
+        "Role": "Customer"
+      }
+    },
+    {
+      "UpstreamPathTemplate": "/api/GetAllPolicyList",
+      "UpstreamHttpMethod": [ "GET" ],
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5436
+        }
+      ],
+      "DownstreamPathTemplate": "/api/GetAllPolicyList",
       "AuthenticationOptions": {
         "AuthenticationProviderKey": "Bearer",
         "AllowedScopes": []
