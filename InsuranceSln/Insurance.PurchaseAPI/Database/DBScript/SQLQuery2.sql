@@ -6,7 +6,7 @@ CREATE DATABASE InsurancePurchase
 
 END
 
-
+Use InsurancePurchase
 
 IF (NOT EXISTS (SELECT * 
                  FROM INFORMATION_SCHEMA.TABLES 

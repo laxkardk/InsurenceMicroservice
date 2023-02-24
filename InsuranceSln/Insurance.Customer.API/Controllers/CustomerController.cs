@@ -82,9 +82,10 @@ namespace Insurance.CustomerAPI.Controllers
         /// <param name="customer">Customer Input Data</param>
         /// <returns></returns>
 
-        [HttpPost("customer/list")]
-        public async Task<IActionResult> GetCustomerAsync([FromBody] GetAllCustomerQuery customer)
+        [HttpGet("customer/list")]
+        public async Task<IActionResult> GetCustomerAsync()
         {
+            var customer = new GetAllCustomerQuery();
             var command = await _mediator.Send(customer);
 
             return Ok(command);
